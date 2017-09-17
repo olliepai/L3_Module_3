@@ -7,15 +7,14 @@ public class BackwardsString extends SpecialString {
 		super(s);
 	}
 	
-	Stack<Character> backwards = new Stack<>();
-	String newText = "";
+	Stack<Character> backwards = new Stack<Character>();
+	
 	public String funkifyText(String text) {
-		for (int i = 0; i < text.length(); i++) {
-			backwards.push(text.charAt(i));
+		String newText = "";
+		for (int i = text.length() - 1; i > -1; i--) {
+			newText += text.charAt(i);
 		}
-		for (int i = 0; i < text.length(); i++) {
-			newText += backwards.pop();
-		}
+		
 		return newText;
 	}
 }
